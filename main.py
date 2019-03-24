@@ -13,7 +13,6 @@ requestList = 'http://' + ip + '/api/v6/lan/browser/pub/'
 r = requests.get(requestList, headers={'Cookie': token})
 print(r.status_code)
 json = r.json()
-print(json['result'])
 for t in json['result']:
     print('Delete ' + t['primary_name'])
     requestDelete = 'http://' + ip + '/api/v6/lan/browser/pub/'+t['id']
